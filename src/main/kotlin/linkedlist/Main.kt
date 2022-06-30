@@ -31,5 +31,21 @@ fun main() {
 
             println(list)
         }
+
+
+        "inserting at a particular index" example {
+            val list = LinkedList<Int>()
+            list.push(3)
+                .push(2)
+                .push(1)
+
+            println("Before inserting: $list")
+
+            var middleNode = list.nodeAt(1)!!
+            for (i in 1..3) {
+                middleNode = list.insert(-1 * i, middleNode)
+            }
+            println("after inserting: $list")
+        }
     }
 }
