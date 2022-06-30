@@ -49,6 +49,19 @@ class LinkedList<T : Any> {
         return newNode
     }
 
+    fun pop(): T?  {
+        if (isEmpty()) return null
+
+        val result = head?.value
+        head = head?.next
+        size--
+
+        if (isEmpty()) {
+            tail = null
+        }
+       return result
+    }
+
     private fun isEmpty(): Boolean = size == 0
 
     override fun toString(): String = if (isEmpty()) "Empty list" else head.toString()
